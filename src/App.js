@@ -3,7 +3,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
-import {Container, Section, Hero, Heading} from 'react-bulma-components';
+import {Container, Section} from 'react-bulma-components';
+import Header from './components/Header';
 
 function App() {
   return (
@@ -11,18 +12,10 @@ function App() {
       <div className="QuinielaUI">
         <div className="App-body">
           <Container>
-            <Section>
-              <Hero color="primary">
-                <Hero.Body>
-                  <Container>
-                    <Heading>Quiniela Acumulativa Liga MX</Heading>
-                    <Heading subtitle size={3}>
-                      Jornada 5
-                    </Heading>
-                  </Container>
-                </Hero.Body>
-              </Hero>
-            </Section>
+            <Header
+              header="Quiniela Acumulativa Liga MX"
+              subheader="Jornada 5"
+            />
             <Section></Section>
           </Container>
         </div>
