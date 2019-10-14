@@ -1,24 +1,32 @@
+//@format
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import {Container, Section, Hero, Heading} from 'react-bulma-components';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="QuinielaUI">
+        <div className="App-body">
+          <Container>
+            <Section>
+              <Hero color="primary">
+                <Hero.Body>
+                  <Container>
+                    <Heading>Quiniela Acumulativa Liga MX</Heading>
+                    <Heading subtitle size={3}>
+                      Jornada 5
+                    </Heading>
+                  </Container>
+                </Hero.Body>
+              </Hero>
+            </Section>
+            <Section></Section>
+          </Container>
+        </div>
+      </div>
     </div>
   );
 }
