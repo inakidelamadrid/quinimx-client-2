@@ -37,11 +37,11 @@
 
 .flipcardInner .front {
   color: #ecfcff;
-  background-color: #5edfff;
+  background-color: transparent;
 }
 
 .flipcardInner .back {
   color: #ecfcff;
-  background-color: #57007e;
   transform: rotateY(180deg);
+  background-color: transparent;
 }
