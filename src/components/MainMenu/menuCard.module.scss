@@ -1,0 +1,50 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  
+  font-family: 'Roboto', sans-serif;
+  height: 300px;
+  font-size: 19px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.cardTitle{
+  padding: 10px;
+  font-size: 19px;
+  font-weight: bold;
+  color: #383f44;
+}
+
+.cardBottom{
+  width: 301px;
+  min-height: 35px;
+  padding: 20px 20px 20px 0px;
+  background-color: #f3f4f6;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.cardBody{
+  flex-grow: 1;
+}
+
+.cardActions{
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+
+  button{
+    color: white;
+    font-size: 13px;
+    padding: 10px 20px;
+    background-color: #509be0;
+    border-radius: 5px;
+  }
+
+  a{
+    margin-right: 10px;
+    color: #8a9298;
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
