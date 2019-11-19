@@ -22,7 +22,7 @@ const CheckBox = React.memo(({ name, selected = false, handleClick }) => {
   )
 })
 
-const Match = ({ local, visitor, result }) => {
+const Match = ({ local, visitor, data = null }) => {
   const handleClick = selected => {
     const cloneCheckboxes = clone(checkboxes)
 
@@ -36,23 +36,26 @@ const Match = ({ local, visitor, result }) => {
     setCheckboxes(cloneCheckboxes)
   }
 
-  const [checkboxes, setCheckboxes] = useState({
+  const internalData = data || {
     local: {
       name: 'LOCAL',
-      handleClick,
-      selected: false,
+      selected: true,
     },
     tie: {
       name: 'TIE',
       selected: false,
-      handleClick,
     },
     visitor: {
       name: 'VISITOR',
-      handleClick,
-      selected: true,
+      selected: false,
     },
+  }
+
+  forEach(internalData, obj => {
+    obj.handleClick = handleClick
   })
+
+  const [checkboxes, setCheckboxes] = useState(internalData)
 
   return (
     <div className={styles.match}>
