@@ -9,9 +9,9 @@ const MatchWeek = ({ weekName, matches }) => {
       <div>{weekName ? weekName : 'MatchWeek'}</div>
 
       <div>
-        {matches.map(match => (
+        {matches.map((match, index) => (
           <Match
-            matchName="Test"
+            matchName={`Partido ${index + 1}`}
             local={getTeam(match[0])}
             visitor={getTeam(match[1])}
           />
