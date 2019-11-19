@@ -59,7 +59,7 @@ const Match = ({ matchName, local, visitor, data = null }) => {
 
   return (
     <div className={styles.match}>
-      <div className={styles.matchTitle}>{matchName}</div>
+      <h2 className={styles.matchTitle}>{matchName}</h2>
       <div className={styles.matchBody}>
         <div className={styles.column}>
           <div>{local}</div>
