@@ -1,16 +1,15 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Match from './Match'
-import Team from '../Team/Team'
+import MatchWeek from './index'
+import Match from '../Match/Match'
 
-//import Logo from './Necaxa.png'
 const server = 'http://localhost:5000'
 const baseImagePath = `${server}/static/images/logos`
 
 const imagePath = (basePath, name) => `${baseImagePath}/${name}`
 
-storiesOf('Match', module) //Force-break
+storiesOf('MatchWeek', module) //Force-break
   .add('default', () => {
     const team1 = {
       name: 'Necaxa',
@@ -21,11 +20,5 @@ storiesOf('Match', module) //Force-break
       image: imagePath(baseImagePath, 'Guadalajara.png'),
     }
 
-    return (
-      <Match matchName="Partido 1"
-        local={<Team {...team1} />}
-        visitor={<Team {...team2} />}
-        result={null}
-      />
-    )
+    return <MatchWeek weekName="Jornada 1" />
   })

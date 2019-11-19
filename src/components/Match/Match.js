@@ -22,7 +22,7 @@ const CheckBox = React.memo(({ name, selected = false, handleClick }) => {
   )
 })
 
-const Match = ({ local, visitor, data = null }) => {
+const Match = ({ matchName, local, visitor, data = null }) => {
   const handleClick = selected => {
     const cloneCheckboxes = clone(checkboxes)
 
@@ -59,23 +59,26 @@ const Match = ({ local, visitor, data = null }) => {
 
   return (
     <div className={styles.match}>
-      <div className={styles.column}>
-        {local}
-        <div className={styles.checkbox}>
-          <CheckBox {...checkboxes.local} />
+      <div className={styles.matchTitle}>{matchName}</div>
+      <div className={styles.matchBody}>
+        <div className={styles.column}>
+          <div>{local}</div>
+          <div className={styles.checkbox}>
+            <CheckBox {...checkboxes.local} />
+          </div>
         </div>
-      </div>
-      <div className={styles.column}>
-        <div className={styles.checkbox}>
-          <CheckBox {...checkboxes.tie} />
+        <div className={styles.column}>
+          <div className={styles.checkbox}>
+            <CheckBox {...checkboxes.tie} />
+          </div>
+          <div className={styles.checkbox}></div>
         </div>
-        <div className={styles.checkbox}></div>
-      </div>
-      <div className={styles.column}>
-        <div className={styles.checkbox}>
-          <CheckBox {...checkboxes.visitor} />
+        <div className={styles.column}>
+          <div className={classNames(styles.checkbox, styles.visitor)}>
+            <CheckBox {...checkboxes.visitor} />
+          </div>
+          <div className={styles.visitorLogo}>{visitor}</div>
         </div>
-        {visitor}
       </div>
     </div>
   )
