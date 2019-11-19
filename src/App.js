@@ -5,6 +5,7 @@ import './App.scss'
 import 'react-bulma-components/dist/react-bulma-components.min.css'
 import { Container, Section } from 'react-bulma-components'
 import Header from './components/Header'
+import MatchWeekFormPage from './pages/MatchWeekFormPage'
 
 function App() {
   return (
@@ -21,8 +22,7 @@ function App() {
                 <Section></Section>
               </Route>
               <Route path="/form">
-                <Header header="Formulario" subheader="Aqui se meteran datos" />
-                <Section></Section>
+                <MatchWeekFormPage />
               </Route>
             </Switch>
           </Container>
