@@ -48,10 +48,10 @@ storiesOf('MatchWeek', module) //Force-break
     }
 
     const matches = [
-      [team1, team2],
-      [team3, team4],
-      [team5, team6],
-      [team7, team8],
+      {id: 1, teams: [team1, team2]},
+      {id: 2, teams: [team3, team4]},
+      {id: 3, teams: [team5, team6]},
+      {id: 4, teams: [team7, team8]},
     ]
 
     return <MatchWeek weekName="Jornada 1" matches={matches}/>

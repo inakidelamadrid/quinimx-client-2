@@ -1,14 +1,12 @@
 //@format
 import React, { useEffect } from 'react'
-import isEmpty from 'lodash/isEmpty'
 import { useSelector, useDispatch } from 'react-redux'
-
-import { loadTeams } from '../../actions/api'
 import { loadCurrentMatchWeek } from '../../actions/api/currentMatchWeek'
+import MatchWeek from '../../components/MatchWeek'
 
 const CurrentMatchWeek = ({ data }) => {
   console.log(data)
-  return <div>CurrentMatchWeek</div>
+  return <MatchWeek weekName="Jornada" matches={data} />
 }
 const CurrentMatchWeekPage = props => {
   const dispatch = useDispatch()

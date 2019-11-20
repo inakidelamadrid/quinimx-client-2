@@ -1,5 +1,6 @@
 //@format
 import {
+  getUrl,
   loadCurrentMatchWeek as apiLoadCurrentMatchWeek,
   loadMatches,
   loadTeams,
@@ -12,13 +13,17 @@ export const MSG_CURRENT_MATCHWEEK_LOAD_SUCCESS = 'CURR_MW_LOAD_SUCCESS'
 export const MSG_CURRENT_MATCHWEEK_LOAD_FAIL = 'CURR_MW_LOAD_FAIL'
 
 const fillUpMatchData = (teams, matches) => {
+  const teamsWithImage = teams.map(team => {
+    return { ...team, image: getUrl(`/${team.image_url}`) }
+  })
+
   return _.chain(matches)
     .map(match => _.pick(match, ['id', 'local_team_id', 'visitor_team_id']))
     .map(match => {
-      const _match = [match.local_team_id, match.visitor_team_id].map(teamId =>
-        _.find(teams, ['id', teamId])
+      const _teams = [match.local_team_id, match.visitor_team_id].map(teamId =>
+        _.find(teamsWithImage, ['id', teamId])
       )
-      return { id: match.id, match: _match }
+      return { id: match.id, teams: _teams }
     })
     .value()
 }
