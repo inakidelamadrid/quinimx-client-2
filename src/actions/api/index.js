@@ -1,4 +1,4 @@
-import { getUrl, loadTeams as apiLoadTeams } from '../api'
+import { getUrl, loadTeams as apiLoadTeams } from '../../api'
 // TODO: Only import needed functions
 import _ from 'lodash'
 
