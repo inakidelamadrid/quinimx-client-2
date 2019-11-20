@@ -4,6 +4,7 @@ import styles from './styles.module.scss'
 import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faHandshake } from '@fortawesome/free-solid-svg-icons'
 import forEach from 'lodash/forEach'
 import clone from 'lodash/clone'
 
@@ -69,9 +70,14 @@ const Match = ({ matchName, local, visitor, data = null }) => {
         </div>
         <div className={styles.column}>
           <div className={styles.checkbox}>
+            <FontAwesomeIcon
+              className={styles.handshakeIcon}
+              icon={faHandshake}
+            />
+          </div>
+          <div className={styles.checkbox}>
             <CheckBox {...checkboxes.tie} />
           </div>
-          <div className={styles.checkbox}></div>
         </div>
         <div className={styles.column}>
           <div className={classNames(styles.checkbox, styles.visitor)}>
