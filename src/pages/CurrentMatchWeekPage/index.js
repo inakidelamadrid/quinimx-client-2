@@ -6,8 +6,6 @@ import MatchWeek from '../../components/MatchWeek'
 import isEmpty from 'lodash/isEmpty'
 
 const CurrentMatchWeek = ({ data }) => {
-  console.log('Data')
-  console.log(data)
   return (
     <MatchWeek
       weekName={`Jornada ${data.matchweek.number}`}
