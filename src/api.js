@@ -12,4 +12,9 @@ const loadCurrentMatchWeek = () => {
   return fetch(uri, { method: 'GET' })
 }
 
-export { loadTeams, loadCurrentMatchWeek }
+const loadMatches = weekId => {
+  const uri = getUrl(`/api/matchweeks/${weekId}/matches`)
+  return fetch(uri, { method: 'GET' })
+}
+
+export { loadTeams, loadCurrentMatchWeek, loadMatches }

@@ -5,7 +5,7 @@ import {
 } from '../../actions/api/currentMatchWeek'
 
 const initialState = {
-  data: {},
+  data: [],
   loading: false,
   error: '',
 }
