@@ -28,12 +28,12 @@ const fillUpMatchData = (teams, matches) => {
     .value()
 }
 
-const dispatchMatches = (dispatch, data) => {
+const dispatchMatches = (dispatch, data, matchweek) => {
   loadTeams()
     .then(response => response.json())
     .then(
       teamsData => {
-        const payload = fillUpMatchData(teamsData, data)
+        const payload = { matchweek, matches: fillUpMatchData(teamsData, data) }
         dispatch({ type: MSG_CURRENT_MATCHWEEK_LOAD_SUCCESS, payload: payload })
       },
       error => errorOnMatchWeekLoad(dispatch, error)
@@ -42,11 +42,11 @@ const dispatchMatches = (dispatch, data) => {
 
 const matchWeekLoaded = (dispatch, data) => {
   // we get the id of the matchweek and fetch all its matches
-  const id = data[0].id
-  loadMatches(id) //Force-break
+  const matchweek = data[0]
+  loadMatches(matchweek.id) //Force-break
     .then(response => response.json())
     .then(
-      data => dispatchMatches(dispatch, data),
+      data => dispatchMatches(dispatch, data, matchweek),
       error => errorOnMatchWeekLoad(dispatch, error)
     )
 }
