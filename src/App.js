@@ -5,6 +5,7 @@ import './App.scss'
 import 'react-bulma-components/dist/react-bulma-components.min.css'
 import { Container, Section } from 'react-bulma-components'
 import Header from './components/Header'
+import CurrentMatchWeekPage from './pages/CurrentMatchWeekPage'
 import MatchWeekFormPage from './pages/MatchWeekFormPage'
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
               </Route>
               <Route path="/form">
                 <MatchWeekFormPage />
+              </Route>
+              <Route path="/quiniela/jornada/actual">
+                <CurrentMatchWeekPage />
               </Route>
             </Switch>
           </Container>
