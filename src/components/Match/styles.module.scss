@@ -75,11 +75,6 @@
   width: 85px;
   height: 85px;
   margin: 6px auto;
-  display: block;
-
-  @media #{$sm} {
-    display: none;
-  }
 }
 
 .checkboxInner.leftRight {
